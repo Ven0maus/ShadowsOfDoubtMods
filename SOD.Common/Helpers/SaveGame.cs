@@ -145,6 +145,7 @@ namespace SOD.Common.Helpers
 
                 Lib.SyncDisks.CheckForSyncDiskData(false, path);
                 Lib.PlayerStatus.Save(path);
+                Lib.InputDetection.Save(path);
             }
             else
             {
@@ -167,10 +168,12 @@ namespace SOD.Common.Helpers
             {
                 Lib.SyncDisks.CheckForSyncDiskData(true, path);
                 Lib.PlayerStatus.Load(path);
+                Lib.InputDetection.Load(path);
             }
             else
             {
                 Lib.PlayerStatus.ResetStatusTracking();
+                Lib.InputDetection.ResetSuppressionTracking();
             }
         }
 
